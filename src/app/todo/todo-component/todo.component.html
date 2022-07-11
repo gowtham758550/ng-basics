@@ -1,0 +1,25 @@
+<div>
+    <input type="text" [(ngModel)]="nameInput">
+    <button
+        (click)="addName()"
+    >
+        Add name
+    </button>
+</div>
+
+<div *ngFor="let data of dataSource">
+    <div>
+        <p>
+            {{data}}
+            <span>
+                <button
+                    (click)="deleteName(data)"
+                >
+                    delete
+                </button>
+            </span>
+        </p>
+    </div>
+</div>
+
+=================================================
