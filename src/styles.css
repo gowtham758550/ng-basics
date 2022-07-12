@@ -1,1 +1,126 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Rokkitt&display=swap');
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary: #b73a8a;
+    --primary-disabled: #e9c3db;
+    --secondary: #3ab7a6;
+    --danger: #b73a4b;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    font-family: 'Rokkitt', serif;
+    background-color: #dbf0ed;
+}
+
+/* fonts */
+.primary-heading {
+    font-family: 'Merriweather', serif;
+}
+
+.secondary-heading {
+    font-size: large;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.font-normal {
+    font-weight: 100;
+}
+
+.font-large {
+    font-size: x-large;
+}
+
+.text-center {
+    text-align: center;
+}
+/* padding and margin */
+.p-5 {
+    padding: 5px;
+}
+
+.m-5 {
+    margin: 5px;
+}
+
+.mt-5 {
+    margin-top: 5px;
+}
+
+.w-fixed {
+    width: 300px;
+}
+
+.h-fixed {
+    height: 30px;
+}
+
+.select, .button {
+    width: 305px;
+}
+
+/* background color*/
+.bg-primary {
+    background-color: var(--primary);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+/* color */
+.text-primary {
+    color: var(--primary);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-danger {
+    color: var(--danger);
+}
+
+.btn {
+    border-style: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.btn:disabled {
+    background-color: var(--primary-disabled);
+    cursor: not-allowed;
+}
+
+/* alignment */
+.align-center {
+    display: flex;
+    justify-content: center;
+}
+
+.align-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-grow-3 {
+    flex-grow: 3;
+}
+
+.card {
+    margin: 40px;
+    padding: 10px;
+    border-radius: 20px;
+}

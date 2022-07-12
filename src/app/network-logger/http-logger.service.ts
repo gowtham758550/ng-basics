@@ -1,8 +1,8 @@
+import { Logger } from "./logger";
 
-export class Logger{
+export class HttpLogger implements Logger{
     log(data: any) {
         console.group('Log Service begins');
-        console.log(data);
         console.groupEnd();
     }
-}
+}   

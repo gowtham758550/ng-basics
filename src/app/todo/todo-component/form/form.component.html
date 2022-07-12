@@ -1,0 +1,25 @@
+<form [formGroup]="form"
+            class="text-center">
+            <div class="m-5">
+                <input type="text" class="w-fixed h-fixed" formControlName="name" placeholder="Task name">
+            </div>
+
+            <div class="m-5">
+                <textarea rows="5" formControlName="description" class="w-fixed" placeholder="Task description"></textarea>
+            </div>
+
+            <div class="m-5">
+                <select formControlName="priority" class="p-5 select h-fixed">
+                    <option [disabled] value="">Select priority</option>
+                    <option *ngFor="let option of priorityList" [value]='option'>{{option}}</option>
+                </select>
+            </div>
+
+            <div class="m-5">
+                <button class="btn button m-5 bg-primary text-white h-fixed"
+                    (click)="emitFormValue()"
+                    [disabled]="!form.valid">
+                    {{type | titlecase}}
+                </button>
+            </div>
+        </form>

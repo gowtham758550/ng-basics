@@ -1,0 +1,5 @@
+
+<div class="card bg-white">
+    <h3 class="primary-heading text-center">Task - {{task.name}}</h3>
+    <app-form [type]="'update'" [data]="task" (emitter)="receiveFormData($event)"></app-form>
+</div>

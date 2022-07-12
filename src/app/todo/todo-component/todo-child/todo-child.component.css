@@ -1,0 +1,28 @@
+
+.field {
+    border: 2px solid #b0e2db;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.chip {
+    padding: 2px;
+    border-radius: 2px;
+    font-size: small;
+    margin-bottom: 1px;
+}
+
+.high {
+    color: #fff;
+    background-color: red;
+}
+
+.medium {
+    color: #000;
+    background-color: yellow;
+}
+
+.low {
+    color: #fff;
+    background-color: green;
+}

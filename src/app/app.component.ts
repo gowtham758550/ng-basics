@@ -15,9 +15,9 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.http.get('https://jsonplaceholder.typicode.com/posts/11')
-      .subscribe(data => {
-        this.data = data;
-      })
+    // this.http.get('https://jsonplaceholder.typicode.com/posts/11')
+    //   .subscribe(data => {
+    //     this.data = data;
+    //   })
   }
 }

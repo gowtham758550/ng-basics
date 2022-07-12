@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { catchError, finalize, Observable, retry, throwError } from 'rxjs';
-import { Logger } from './logger.service';
+import { HttpLogger } from './http-logger.service';
 
 // enum Loglevel {
 //     Error = 0,
@@ -16,11 +16,10 @@ import { Logger } from './logger.service';
 export class NetLogger implements HttpInterceptor {
 
     constructor(
-        private logger: Logger
+        private logger: HttpLogger
     ) {}
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        // console.log(req);
         const token = "token returned from a service";
         // clones the request with authorization token
         req = req.clone({

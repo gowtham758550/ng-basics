@@ -1,25 +1,18 @@
-<div>
-    <input type="text" [(ngModel)]="nameInput">
-    <button
-        (click)="addName()"
-    >
-        Add name
-    </button>
-</div>
-
-<div *ngFor="let data of dataSource">
+<div class="card bg-white">
+    <h1 class="text-center primary-heading">Todo list</h1>
     <div>
-        <p>
-            {{data}}
-            <span>
-                <button
-                    (click)="deleteName(data)"
-                >
-                    delete
-                </button>
-            </span>
-        </p>
+        <app-form [type]="'add'" (emitter)="receiveFormData($event)"></app-form>
+    </div>
+    
+    <h3 class="primary-heading p-5">Tasks</h3>
+    <hr>
+
+    <div *ngIf="tasks.length == 0"
+        class="text-center">
+        <img src="../../../assets/list.png" alt="No tasks" class="img">
+        <p>Nothing to show</p>
+    </div>
+    <div *ngFor="let data of tasks">
+        <app-todo-child [todo]="data" (emittask)="receive($event)"></app-todo-child>
     </div>
 </div>
-
-=================================================
