@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataSource } from 'src/models/dataSource';
+import { DataSource } from 'src/models/data-source.model';
 
 @Component({
   selector: 'app-todo-child',
@@ -11,12 +11,11 @@ export class TodoChildComponent implements OnInit {
 
   @Input() todo!: DataSource;
   @Output() emittask = new EventEmitter<string>();
-  priorityClassList: string[]
+  priorityClassList: string[] = []
 
   constructor(
     public router: Router
   ) {
-    this.priorityClassList = [];
   }
 
   ngOnInit(): void {

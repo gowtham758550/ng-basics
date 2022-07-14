@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { find, Observable, of } from 'rxjs';
-import { DataSource } from 'src/models/dataSource';
+import { DataSource } from 'src/models/data-source.model';
 
 @Injectable({
   providedIn: 'root'

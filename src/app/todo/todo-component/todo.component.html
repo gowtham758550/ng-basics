@@ -5,14 +5,16 @@
     </div>
     
     <h3 class="primary-heading p-5">Tasks</h3>
+    <button (click)="deleteAllTask()">Delete All</button>
     <hr>
 
-    <div *ngIf="tasks.length == 0"
+    <div *
+    ngIf="tasks.length == 0"
         class="text-center">
         <img src="../../../assets/list.png" alt="No tasks" class="img">
         <p>Nothing to show</p>
     </div>
     <div *ngFor="let data of tasks">
-        <app-todo-child [todo]="data" (emittask)="receive($event)"></app-todo-child>
+        <app-todo-child #todoCard [todo]="data" (emittask)="receive($event)"></app-todo-child>
     </div>
 </div>

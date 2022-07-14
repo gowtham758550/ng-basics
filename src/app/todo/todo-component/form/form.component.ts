@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DataSource } from 'src/models/dataSource';
+import { DataSource } from 'src/models/data-source.model';
 
 @Component({
   selector: 'app-form',
@@ -20,7 +20,7 @@ export class FormComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.form = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       description: ['', Validators.required],
       priority: ['', Validators.required]
     })
@@ -28,13 +28,17 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.type == "update") {
-      let {name, priority, description} = this.data
-      this.form.setValue({name, priority, description});
+      this.updateTask();
     }
   }
 
   emitFormValue() {
     this.emitter.emit(this.form.value);
+  }
+
+  updateTask() {
+    let {name, priority, description} = this.data
+    this.form.setValue({name, priority, description});
   }
 
 }
